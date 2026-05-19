@@ -6,11 +6,9 @@
   <title>Lili Freese</title>
   <link rel="icon" href="logo.png" type="image/png">
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Font Awesome for social icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
@@ -76,7 +74,7 @@
 
     .socials a{
       color:white;
-      font-size:22px; /* larger for icons */
+      font-size:22px;
       opacity:.8;
       transition:.3s;
     }
@@ -100,7 +98,6 @@
   <div class="hero-content">
     <h1>LILI FREESE</h1>
 
-    <!-- ENTER BUTTON -->
     <a href="work.html" class="enter-btn" id="enterBtn">ENTER</a>
 
     <div class="socials">
@@ -111,7 +108,6 @@
   </div>
 </section>
 
-<!-- ENTER KEY SCRIPT -->
 <script>
   function goToWork() {
     document.body.classList.add("fade-out");
@@ -120,13 +116,11 @@
     }, 400);
   }
 
-  // Click ENTER button
   document.getElementById("enterBtn").addEventListener("click", function(e) {
     e.preventDefault();
     goToWork();
   });
 
-  // Press Enter key
   document.addEventListener("keydown", function(e) {
     const tag = document.activeElement.tagName.toLowerCase();
     const typing = tag === "input" || tag === "textarea";
