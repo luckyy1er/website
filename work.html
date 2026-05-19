@@ -6,11 +6,9 @@
     <title>Lili Freese - Work</title>
     <link rel="icon" href="logo.png" type="image/png">
 
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -23,7 +21,6 @@
             color: #fff;
         }
 
-        /* Header layout */
         header {
             position: relative;
             display: flex;
@@ -53,21 +50,19 @@
             padding-bottom: 3px;
         }
 
-        /* Highlight active page */
         .nav-left a.active {
             border-bottom: 2px solid #fff;
         }
 
         .nav-left a:hover, .nav-right a:hover { opacity: 0.7; }
 
-        /* Logo in center */
         .logo {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             font-family: 'Oswald', sans-serif;
             font-weight: 600;
-            letter-spacing: 2px; /* smaller spacing */
+            letter-spacing: 2px;
             font-size: 20px;
             text-align: center;
             white-space: nowrap;
@@ -92,7 +87,6 @@
             .nav-left, .nav-right { justify-content: center; gap: 15px; }
         }
 
-        /* Masonry gallery */
         .masonry {
             column-count: 3;
             column-gap: 10px;
@@ -113,7 +107,6 @@
 
         .masonry img:hover { transform: scale(1.05); }
 
-        /* Lightbox styles */
         .lightbox {
             position: fixed;
             top:0; left:0;
@@ -143,6 +136,16 @@
             color: #fff;
             text-decoration: none;
         }
+
+        .footer-credit{
+            text-align:center;
+            padding:25px 10px 35px;
+            font-size:12px;
+            letter-spacing:1px;
+            opacity:0.6;
+            color:#fff;
+        }
+        
     </style>
 </head>
 <body>
@@ -150,7 +153,7 @@
 <header>
     <div class="nav-left">
         <a href="index.html">Welcome</a>
-        <a href="work.html" class="active">Work</a> <!-- Active page underlined -->
+        <a href="work.html" class="active">Work</a>
         <a href="about.html">About</a>
     </div>
 
@@ -164,7 +167,6 @@
 </header>
 
 <main class="masonry">
-    <!-- Lightbox links for clickable enlargement -->
     <a href="#img1"><img src="images/strip.JPG" alt="Las Vegas city view"></a>
     <a href="#img2"><img src="images/squirrel.JPG" alt="Squirrel on a rock"></a>
     <a href="#img3"><img src="images/brycecanyon.JPG" alt="Bryce Canyon landscape"></a>
@@ -179,7 +181,6 @@
     <a href="#img12"><img src="images/flower.JPG" alt="Flower closeup"></a>
 </main>
 
-<!-- Lightbox overlays -->
 <div id="img1" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/strip.JPG" alt=""></div>
 <div id="img2" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/squirrel.JPG" alt=""></div>
 <div id="img3" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/brycecanyon.JPG" alt=""></div>
@@ -193,5 +194,9 @@
 <div id="img11" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion3.JPG" alt=""></div>
 <div id="img12" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/flower.JPG" alt=""></div>
 
+<div class="footer-credit">
+    Fully coded and designed by Lili Freese
+</div>
+    
 </body>
 </html>
