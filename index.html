@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Lili Freese</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome for social icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      overflow:hidden;
+      transition: opacity 0.4s ease;
+    }
+
+    body.fade-out{
+      opacity:0;
+    }
+
+    .hero{
+      width:100%;
+      height:100vh;
+      background:
+              linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.65)),
+              url("background.jpg");
+      background-size:cover;
+      background-position:center;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+    }
+
+    .hero-content h1{
+      font-size:110px;
+      font-weight:600;
+      letter-spacing:4px;
+      margin-bottom:35px;
+    }
+
+    .enter-btn{
+      display:inline-block;
+      padding:16px 42px;
+      border-radius:40px;
+      background:white;
+      color:black;
+      text-decoration:none;
+      font-size:15px;
+      transition:.3s;
+    }
+
+    .enter-btn:hover{
+      transform:scale(1.05);
+    }
+
+    .socials{
+      margin-top:45px;
+      display:flex;
+      justify-content:center;
+      gap:25px;
+    }
+
+    .socials a{
+      color:white;
+      font-size:22px; /* larger for icons */
+      opacity:.8;
+      transition:.3s;
+    }
+
+    .socials a:hover{
+      opacity:1;
+      transform:translateY(-2px);
+    }
+
+    @media(max-width:700px){
+      .hero-content h1{
+        font-size:60px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>LILI FREESE</h1>
+
+    <!-- ENTER BUTTON -->
+    <a href="work.html" class="enter-btn" id="enterBtn">ENTER</a>
+
+    <div class="socials">
+      <a href="https://instagram.com/lilifreesephoto" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://linkedin.com/in/lilifreese" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:lilifreese@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- ENTER KEY SCRIPT -->
+<script>
+  function goToWork() {
+    document.body.classList.add("fade-out");
+    setTimeout(() => {
+      window.location.href = "work.html";
+    }, 400);
+  }
+
+  // Click ENTER button
+  document.getElementById("enterBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    goToWork();
+  });
+
+  // Press Enter key
+  document.addEventListener("keydown", function(e) {
+    const tag = document.activeElement.tagName.toLowerCase();
+    const typing = tag === "input" || tag === "textarea";
+
+    if (e.key === "Enter" && !typing) {
+      goToWork();
+    }
+  });
+</script>
+
+</body>
+</html>

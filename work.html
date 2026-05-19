@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lili Freese - Work</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&family=Oswald:wght@500;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            background: #000;
+            color: #fff;
+        }
+
+        /* Header layout */
+        header {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 50px;
+            background: #000;
+            z-index: 1000;
+        }
+
+        .nav-left, .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            z-index: 2;
+        }
+
+        .nav-left a, .nav-right a {
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            letter-spacing: 1px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            transition: opacity 0.3s, border-bottom 0.3s;
+            padding-bottom: 3px;
+        }
+
+        /* Highlight active page */
+        .nav-left a.active {
+            border-bottom: 2px solid #fff;
+        }
+
+        .nav-left a:hover, .nav-right a:hover { opacity: 0.7; }
+
+        /* Logo in center */
+        .logo {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Oswald', sans-serif;
+            font-weight: 600;
+            letter-spacing: 2px; /* smaller spacing */
+            font-size: 20px;
+            text-align: center;
+            white-space: nowrap;
+        }
+
+        .nav-right a i {
+            font-size: 18px;
+            color: #fff;
+            transition: opacity 0.3s;
+        }
+
+        .nav-right a i:hover { opacity: 0.7; }
+
+        @media(max-width: 800px){
+            header {
+                flex-direction: column;
+                height: auto;
+                gap: 10px;
+                padding: 10px 20px;
+            }
+            .logo { position: static; transform: none; font-size: 18px; }
+            .nav-left, .nav-right { justify-content: center; gap: 15px; }
+        }
+
+        /* Masonry gallery */
+        .masonry {
+            column-count: 3;
+            column-gap: 10px;
+            padding: 20px;
+        }
+
+        @media(max-width:1000px){ .masonry { column-count:2; } }
+        @media(max-width:600px){ .masonry { column-count:1; } }
+
+        .masonry img {
+            width:100%;
+            display:block;
+            margin-bottom:10px;
+            border-radius:4px;
+            transition: transform 0.3s;
+            cursor:pointer;
+        }
+
+        .masonry img:hover { transform: scale(1.05); }
+
+        /* Lightbox styles */
+        .lightbox {
+            position: fixed;
+            top:0; left:0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 4px;
+        }
+
+        .lightbox:target {
+            display: flex;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: #fff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="nav-left">
+        <a href="index.html">Welcome</a>
+        <a href="work.html" class="active">Work</a> <!-- Active page underlined -->
+        <a href="about.html">About</a>
+    </div>
+
+    <div class="logo">LILI FREESE</div>
+
+    <div class="nav-right">
+        <a href="https://instagram.com/lilifreesephoto" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com/in/lilifreese" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:lilifreese@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+</header>
+
+<main class="masonry">
+    <!-- Lightbox links for clickable enlargement -->
+    <a href="#img1"><img src="images/strip.JPG" alt="Las Vegas city view"></a>
+    <a href="#img2"><img src="images/squirrel.JPG" alt="Squirrel on a rock"></a>
+    <a href="#img3"><img src="images/brycecanyon.JPG" alt="Bryce Canyon landscape"></a>
+    <a href="#img4"><img src="images/newarkres.JPG" alt="Sunset over river"></a>
+    <a href="#img5"><img src="images/grandcanyon.JPG" alt="Grand Canyon landscape"></a>
+    <a href="#img6"><img src="images/horeshoebend.JPG" alt="Horseshoe Bend"></a>
+    <a href="#img7"><img src="images/cactus.JPG" alt="Cactus desert plants"></a>
+    <a href="#img8"><img src="images/zion1.JPG" alt="Zion cliffs closeup"></a>
+    <a href="#img9"><img src="images/zion2.JPG" alt="Horseshoe Bend aerial view"></a>
+    <a href="#img10"><img src="images/inside.JPG" alt="Night city lights"></a>
+    <a href="#img11"><img src="images/zion3.JPG" alt="Zion rock formations"></a>
+    <a href="#img12"><img src="images/flower.JPG" alt="Flower closeup"></a>
+</main>
+
+<!-- Lightbox overlays -->
+<div id="img1" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/strip.JPG" alt=""></div>
+<div id="img2" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/squirrel.JPG" alt=""></div>
+<div id="img3" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/brycecanyon.JPG" alt=""></div>
+<div id="img4" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/newarkres.JPG" alt=""></div>
+<div id="img5" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/grandcanyon.JPG" alt=""></div>
+<div id="img6" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/horeshoebend.JPG" alt=""></div>
+<div id="img7" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/cactus.JPG" alt=""></div>
+<div id="img8" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion1.JPG" alt=""></div>
+<div id="img9" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion2.JPG" alt=""></div>
+<div id="img10" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/inside.JPG" alt=""></div>
+<div id="img11" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/zion3.JPG" alt=""></div>
+<div id="img12" class="lightbox"><a href="#" class="lightbox-close">&times;</a><img src="images/flower.JPG" alt=""></div>
+
+</body>
+</html>
